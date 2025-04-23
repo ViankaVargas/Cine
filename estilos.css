@@ -44,12 +44,20 @@ main {
 }
 
 .asiento {
-    background-color: #fff;
     border: 1px solid #ddd;
     padding: 0.5em;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.asiento:not(.ocupado):not(.seleccionado) {
+    background-color: #32CD32; /* Verde */
+}
+
+.asiento.ocupado {
+    background-color: #FF0000; /* Rojo */
+    cursor: not-allowed;
 }
 
 .asiento.seleccionado {
@@ -92,3 +100,5 @@ main {
         padding: 0.5em;
     }
 }
+
+
