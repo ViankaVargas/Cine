@@ -65,10 +65,8 @@ function seleccionarAsiento(idAsiento) {
 
 // Función para mostrar resumen de compra
 function mostrarResumenCompra() {
-    let html = '';
-    html += `<p>Asientos seleccionados: ${asientosSeleccionados.length}</p>`;
-    html += `<p>Total a pagar: $${totalPagar}</p>`;
-    document.getElementById('resumen-compra').innerHTML = html;
+    document.getElementById('asientos-seleccionados').innerText = `Asientos seleccionados: ${asientosSeleccionados.length}`;
+    document.getElementById('total-pagar').innerText = `Total a pagar: $${totalPagar}`;
 }
 
 // Función para generar factura
@@ -94,11 +92,11 @@ document.getElementById('btn-reservar').addEventListener('click', () => {
         asiento.ocupado = true;
         asiento.seleccionado = false;
     });
+    generarFactura();
     asientosSeleccionados = [];
     totalPagar = 0;
     mostrarAsientos();
     mostrarResumenCompra();
-    generarFactura();
 });
 
 // Inicializar
